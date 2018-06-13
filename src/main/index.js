@@ -48,6 +48,11 @@ const installExtensions = async () => {
   ).catch(console.log);
 };
 
+// Enable WEBGL Hack ( REMOVE THIS )
+app.commandLine.appendSwitch('ignore-gpu-blacklist');
+app.commandLine.appendSwitch('--disable-gpu-process-crash-limit');
+app.disableDomainBlockingFor3DAPIs();
+
 app.setAsDefaultProtocolClient('lbry');
 app.setName('LBRY');
 app.setAppUserModelId('io.lbry.LBRY');
